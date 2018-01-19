@@ -14,6 +14,9 @@ public class Kmeans {
     public static void main(String[] args) throws IOException {
         List<Vector> sampleData = MathUtil.readFileToVector("datafile/randomData.csv");
 
+        /**/
+
+
         int k = 3;
         double threshold = 0.01;
 
@@ -29,6 +32,7 @@ public class Kmeans {
 
         List<List<Cluster>> finalClusters = KMeansClusterer.clusterPoints(sampleData, clusters, new EuclideanDistanceMeasure(), k, threshold);
         for (Cluster cluster : finalClusters.get(finalClusters.size() - 1)) {
+           // System.out.println("Cluster id: " + cluster.getId() + " center: " + cluster.getCenter().asFormatString());
             System.out.println("Cluster id: " + cluster.getId() + " center: " + cluster.getCenter().asFormatString());
         }
     }
