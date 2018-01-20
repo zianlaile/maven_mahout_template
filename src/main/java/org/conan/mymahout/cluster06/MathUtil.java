@@ -22,14 +22,14 @@ import org.conan.mymahout.utils.TyptChnangeUtils;
  */
 public class MathUtil {
 
-    public static List<Vector> readFileToVector(String file) throws IOException {
+    public static List<Vector> readFileToVector(String file,String separator) throws IOException {
         List<Vector> vectors = new ArrayList<Vector>();
         BufferedReader buffer = new BufferedReader(new FileReader(file));
         String line = null;
         int roll = 0;
         int colume = 0;
         while ((line = buffer.readLine()) != null) {
-            String[] arr = line.split(",");
+            String[] arr = line.split(separator);
             double[] dou = TyptChnangeUtils.StrngToDouble(arr);
             vectors.add(new DenseVector(dou));
             /*vectors.add(new DenseVector(new double[] {

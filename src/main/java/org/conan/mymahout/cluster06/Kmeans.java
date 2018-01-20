@@ -13,11 +13,12 @@ import org.conan.mymahout.utils.Word2VecUtils;
 
 public class Kmeans {
 
-    public static void main(String[] args) throws IOException {
-        List<Vector> sampleData = MathUtil.readFileToVector("datafile/randomData.csv");
+    public static void runKmeans(String path,int k,String sep) throws IOException {
+        //List<Vector> sampleData = MathUtil.readFileToVector("datafile/randomData.csv");
         //List<Vector> sampleData = MathUtil.readFileToVector("datafile/b_everyday_tables02.csv");
+        List<Vector> sampleData = MathUtil.readFileToVector(path,sep);
 
-        int k = 4;
+        //int k = 4;
         double threshold = 0.01;
         int col = sampleData.get(0).size();
 
