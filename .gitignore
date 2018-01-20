@@ -1,8 +1,9 @@
+target
+myMahout.iml
+.idea
 .classpath
 .project
-.classpath
 .settings
-target
 *.log
 data
 build
@@ -14,6 +15,3 @@ runtime
 *.ear
 input
 output
-
-
-

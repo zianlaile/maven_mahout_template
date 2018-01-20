@@ -14,8 +14,8 @@ import org.conan.mymahout.utils.Word2VecUtils;
 public class Kmeans {
 
     public static void main(String[] args) throws IOException {
-        //List<Vector> sampleData = MathUtil.readFileToVector("datafile/randomData.csv");
-        List<Vector> sampleData = MathUtil.readFileToVector("datafile/b_everyday_tables02.csv");
+        List<Vector> sampleData = MathUtil.readFileToVector("datafile/randomData.csv");
+        //List<Vector> sampleData = MathUtil.readFileToVector("datafile/b_everyday_tables02.csv");
 
         int k = 4;
         double threshold = 0.01;
