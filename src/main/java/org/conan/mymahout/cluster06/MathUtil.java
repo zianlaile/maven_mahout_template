@@ -11,6 +11,7 @@ import org.apache.mahout.clustering.dirichlet.UncommonDistributions;
 import org.apache.mahout.common.RandomUtils;
 import org.apache.mahout.math.DenseVector;
 import org.apache.mahout.math.Vector;
+import org.conan.mymahout.utils.TyptChnangeUtils;
 
 /**
  * Copy from source code of Mahout in Action
@@ -25,10 +26,19 @@ public class MathUtil {
         List<Vector> vectors = new ArrayList<Vector>();
         BufferedReader buffer = new BufferedReader(new FileReader(file));
         String line = null;
+        int roll = 0;
+        int colume = 0;
         while ((line = buffer.readLine()) != null) {
             String[] arr = line.split(",");
-            vectors.add(new DenseVector(new double[] { Double.parseDouble(arr[0]), Double.parseDouble(arr[1]) }));
+            double[] dou = TyptChnangeUtils.StrngToDouble(arr);
+            vectors.add(new DenseVector(dou));
+            /*vectors.add(new DenseVector(new double[] {
+                    Double.parseDouble(arr[0]), Double.parseDouble(arr[1])
+            }));*/
+            roll++;
+            colume = arr.length;
         }
+        System.out.println("共有数据："+roll+"行，"+colume+"列");
         buffer.close();
         return vectors;
     }
@@ -55,7 +65,7 @@ public class MathUtil {
         return chosenPoints;
     }
 
-    public static void main(String[] args) throws IOException {
+/*    public static void main(String[] args) throws IOException {
         readFileToVector("datafile/randomData.csv");
-    }
+    }*/
 }

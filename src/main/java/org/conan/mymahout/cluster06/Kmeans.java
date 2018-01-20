@@ -15,9 +15,9 @@ public class Kmeans {
 
     public static void main(String[] args) throws IOException {
         //List<Vector> sampleData = MathUtil.readFileToVector("datafile/randomData.csv");
-        List<Vector> sampleData = MathUtil.readFileToVector("datafile/t01.csv");
+        List<Vector> sampleData = MathUtil.readFileToVector("datafile/b_everyday_tables02.csv");
 
-        int k = 3;
+        int k = 4;
         double threshold = 0.01;
         int col = sampleData.get(0).size();
 
