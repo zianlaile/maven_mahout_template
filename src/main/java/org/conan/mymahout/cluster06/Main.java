@@ -8,10 +8,10 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        //String file = "datafile/b_everyday_tables02.csv";
+        //String file = "datafile/b_everyday_tables01.csv";
         String file = "datafile/t01.csv";
-        int k = 3;
-        String separator = " ";
+        int k = 4;
+        String separator = ",";
         Kmeans.runKmeans(file,k,separator);
     }
 }
