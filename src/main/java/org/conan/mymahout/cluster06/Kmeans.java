@@ -9,6 +9,7 @@ import org.apache.mahout.clustering.kmeans.Cluster;
 import org.apache.mahout.clustering.kmeans.KMeansClusterer;
 import org.apache.mahout.common.distance.EuclideanDistanceMeasure;
 import org.apache.mahout.math.Vector;
+import org.apache.mahout.utils.clustering.ClusterDumper;
 import org.conan.mymahout.utils.Word2VecUtils;
 
 public class Kmeans {
@@ -35,9 +36,14 @@ public class Kmeans {
         List<double[]> douList = new ArrayList<double[]>();
 
         List<List<Cluster>> finalClusters = KMeansClusterer.clusterPoints(sampleData, clusters, new EuclideanDistanceMeasure(), k, threshold);
+
         for (Cluster cluster : finalClusters.get(finalClusters.size() - 1)) {
            // System.out.println("Cluster id: " + cluster.getId() + " center: " + cluster.getCenter().asFormatString());
             System.out.println("Cluster id: " + cluster.getId() + " center: " + cluster.getCenter().asFormatString());
+
+
+           // ClusterDumper clusterdumper=new ClusterDumper(sequentialfile,clusterpoints);
+
 
             //去除左右大括号并按照逗号分隔开
             String[] s1 = cluster.getCenter().asFormatString().substring(1,cluster.getCenter().asFormatString().length()-1).split(",");
@@ -66,7 +72,6 @@ public class Kmeans {
                 System.out.println(", 欧式："+Word2VecUtils.euclideanNormalization(Word2VecUtils.euclideanDistance(douList.get(i),douList.get(j))));
             }
         }
-
 
     }
 }
